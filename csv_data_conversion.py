@@ -38,3 +38,30 @@ def get_data_set(file_name):
                     pass
     shutil.rmtree(os.getcwd() + '\\__pycache__')
     return data_set
+
+def get_data_set2(file_name):
+    '''We have to convert it into a "understandable format. So we have to clean it up, beucase alot of the tiles is not unicode based right.'''
+    with open(file_name, encoding="utf8", errors='ignore') as f:
+        reader = csv.reader(f)
+        next(reader) # skip header
+        data_set = []
+        for row in reader:
+                try:
+                    # We create a single object for each row, that takes the important informations and put them into an array.
+                    row_object = {}
+                    # Had to decode some characters into a suitable format the computer understands, so we chose to use latin. We also put the information into suitable formats, for better performance and correct indication
+                    row_object['aar'] = row[0:1][0]
+                    row_object['bydel'] = row[0:1][0]
+                    row_object['distriktsnavn'] = row[0:1][0]
+                    row_object['hustyp'] = row[0:1][0]
+                    row_object['familiegruppe'] = row[0:1][0]
+                    row_object['familietype'] = row[0:1][0]
+                    row_object['bruttoindkom'] = row[0:1][0]
+                    row_object['indkomstkategori'] = row[0:1][0]
+                    row_object['hustande'] = row[0:1][0]
+
+                    data_set.append(row_object)
+                except:
+                    pass
+    #shutil.rmtree(os.getcwd() + '\\__pycache__')
+    return data_set
