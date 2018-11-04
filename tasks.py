@@ -97,4 +97,46 @@ def task3(data):
     plt.xlabel('Bydel', fontsize=12)
     plt.ylabel('Procent', fontsize=12)
     plt.show()
+
+def task4(data, data2):
+    my_dict = {}
+    my_dict2 = {}
+    for row in data:
+        my_dict.setdefault(row['bydel'], 0)
+        my_dict[row['bydel']] += row['antal_pladser']
+    for row in data2:
+        if 'sterbro' == row['distriktsnavn']:
+            my_dict2.setdefault(row['familietype'], 0)
+            my_dict2[row['familietype']] += 1
+    print(my_dict2)
+
+
+def taskt5(data, data2):
     
+    gennemsnitlig_bruttoindkomst = {}
+    antal_per_bydel = {}
+    
+    for row in data2:
+        gennemsnitlig_bruttoindkomst.setdefault(row['distriktsnavn'], 0)
+        gennemsnitlig_bruttoindkomst[row['distriktsnavn']] += int(row['bruttoindkom'])
+
+    for row in data2:
+        antal_per_bydel.setdefault(row['distriktsnavn'], 0)
+        antal_per_bydel[row['distriktsnavn']] += 1
+
+    print(gennemsnitlig_bruttoindkomst)
+    return
+
+
+
+
+
+
+
+
+
+
+
+
+
+

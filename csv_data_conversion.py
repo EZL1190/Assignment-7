@@ -51,14 +51,14 @@ def get_data_set2(file_name):
                     row_object = {}
                     # Had to decode some characters into a suitable format the computer understands, so we chose to use latin. We also put the information into suitable formats, for better performance and correct indication
                     row_object['aar'] = row[0:1][0]
-                    row_object['bydel'] = row[0:1][0]
-                    row_object['distriktsnavn'] = row[0:1][0]
-                    row_object['hustyp'] = row[0:1][0]
-                    row_object['familiegruppe'] = row[0:1][0]
-                    row_object['familietype'] = row[0:1][0]
-                    row_object['bruttoindkom'] = row[0:1][0]
-                    row_object['indkomstkategori'] = row[0:1][0]
-                    row_object['hustande'] = row[0:1][0]
+                    row_object['bydel'] = row[1:2][0]
+                    row_object['distriktsnavn'] = row[2:3][0].split('. ')[1]
+                    row_object['hustyp'] = row[3:4][0]
+                    row_object['familiegruppe'] = row[4:5][0]
+                    row_object['familietype'] = row[5:6][0]
+                    row_object['bruttoindkom'] = row[6:7][0]
+                    row_object['indkomstkategori'] = row[7:8][0]
+                    row_object['hustande'] = row[8:9][0]
 
                     data_set.append(row_object)
                 except:
