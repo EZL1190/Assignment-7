@@ -11,13 +11,13 @@ data = cdc.get_data_set(file_name)
 file_name2 = webget.download(url2)
 data2 = cdc.get_data_set2(file_name2)
 
-# print(tasks.task1(data))
-# #---
-# print(tasks.task2(data))
-# #---
-# tasks.task3(data)
+print(tasks.task1(data))
+#---
+print(tasks.task2(data))
+#---
+tasks.task3(data)
 
-#tasks.task4(data, data2)
+tasks.task4(data, data2)
 
 tasks.taskt5(data, data2)
 
